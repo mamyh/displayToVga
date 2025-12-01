@@ -1,6 +1,6 @@
 /* Configuration */
 const PIXEL_ID = 'YOUR_PIXEL_ID'; 
-const N8N_WEBHOOK = 'http://localhost:5678/webhook/submit-form'; 
+const N8N_WEBHOOK = 'http://localhost:5678/webhook-test/submit-form'; 
 const PRICE_PER_UNIT = 900;
 
 /* Global State */
@@ -122,7 +122,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
 
     // 4. Send Data
     try {
-        if (N8N_WEBHOOK && N8N_WEBHOOK !== 'http://localhost:5678/webhook/submit-form') {
+        if (N8N_WEBHOOK ) { //&& N8N_WEBHOOK !== 'http://localhost:5678/webhook/submit-form'
             await fetch(N8N_WEBHOOK, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
