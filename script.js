@@ -1,6 +1,6 @@
 /* Configuration */
 const PIXEL_ID = 'YOUR_PIXEL_ID'; 
-const N8N_WEBHOOK = 'http://localhost:5678/webhook/submit-form'; 
+const N8N_WEBHOOK = 'https://frog-retrieved-employ-weddings.trycloudflare.com/webhook/submit-form'; 
 const PRICE_PER_UNIT = 900;
 
 /* Global State */
