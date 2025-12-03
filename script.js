@@ -84,6 +84,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     // 1. Validation
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim(); // Added Email
     const address = document.getElementById('address').value.trim();
     
     const radios = document.getElementsByName('payment');
@@ -110,7 +111,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
 
     // 3. Prepare Data
     const payload = {
-        name, phone, address, payment,
+        name, phone, email, address, payment, // Added email to payload
         quantity,
         total: quantity * PRICE_PER_UNIT,
         date: new Date().toISOString(),
@@ -122,7 +123,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
 
     // 4. Send Data
     try {
-        if (N8N_WEBHOOK ) { //&& N8N_WEBHOOK !== 'http://localhost:5678/webhook/submit-form'
+        if (N8N_WEBHOOK) { 
             await fetch(N8N_WEBHOOK, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
